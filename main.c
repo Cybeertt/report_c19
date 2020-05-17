@@ -24,7 +24,7 @@ void printCommandsMenu();
 int main(int argc, char** argv) {
 
 	/* declaracao de variaveis */
-
+	Int i;
 	/* interpretador de comandos */
 	String command;
 	int quit = 0;
