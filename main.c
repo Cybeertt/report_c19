@@ -8,8 +8,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <string.h>
 #include <locale.h>
+
+#include "list.h"
+#include "utils.h"
 
 typedef char String[255];
 
@@ -24,7 +28,7 @@ void printCommandsMenu();
 int main(int argc, char** argv) {
 
 	/* declaracao de variaveis */
-	Int i;
+	
 	/* interpretador de comandos */
 	String command;
 	int quit = 0;
@@ -41,10 +45,22 @@ int main(int argc, char** argv) {
 		if (equalsStringIgnoreCase(command, "QUIT")) {
 			quit = 1; /* vai provocar a saída do interpretador */				
 		}
-		else if (equalsStringIgnoreCase(command, "LOAD")) {
+		else if (equalsStringIgnoreCase(command, "LOADP")) {
 			/* invocação da função responsável pela respetiva
 			funcionalidade. Remover printf seguinte após implementação */
-			printf("Comando LOAD nao implementado.\n");
+			
+			PtList listPT = NULL;
+
+			char filename[100] =  "patients.csv";
+
+			/*Import data from file*/
+			loadPatients(filename, &listPT);
+
+			listPrint(listPT);
+
+			listDestroy(&listPT);			
+
+			printf("Comando LOADP nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "LOADR")) {
 			/* invocação da função responsável pela respetiva
@@ -64,19 +80,56 @@ int main(int argc, char** argv) {
 			printf("Comando SEX nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "SHOW")) {
+			
+			PtList listPT = NULL;
+
+			char filename[100] =  "patients.csv";
+
+			/*Import data from file*/
+			loadPatients(filename, &listPT);
+
+			ShowPatient(listPT);
+
+			listDestroy(&listPT);
 			printf("Comando SHOW nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "TOP5")) {
 			printf("Comando TOP5 nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "OLDEST")) {
+
+			PtList listPT = NULL;
+
+			char filename[100] =  "patients.csv";
+
+			/*Import data from file*/
+			loadPatients(filename, &listPT);
+
+			arrDescSort(listPT);
+
+			OldestArrSort(listPT);
+
+			listPrint(listPT);
+
 			printf("Comando OLDEST nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "GROWTH")) {
 			printf("Comando GROWTH nao implementado.\n");
 		}	
 		else if (equalsStringIgnoreCase(command, "MATRIX")) {
+			
+			PtList listPT = NULL;
+
+			char filename[100] =  "patients.csv";
+			
+
+			/*Import data from file*/
+			loadPatients(filename, &listPT);
+
+			patientMatrix(listPT);
+
 			printf("Comando MATRIX nao implementado.\n");
+
 		}
 		else if (equalsStringIgnoreCase(command, "REGIONS")) {
 			printf("Comando REGIONS nao implementado.\n");
@@ -105,7 +158,7 @@ void printCommandsMenu() {
 	printf("\n===================================================================================");
 	printf("\n                          PROJECT: COVID-19                    ");
 	printf("\n===================================================================================");
-	printf("\nA. Base Commands (LOAD, LOADR,CLEAR).");
+	printf("\nA. Base Commands (LOADP, LOADR,CLEAR).");
 	printf("\nB. Simple Indicators and searchs (AVERAGE, FOLLOW, MATRIX, OLDEST, RELEASED, SEX, SHOW, TOP5).");
 	printf("\nC. Advanced indicator (REGIONS, REPORTS)");
 	printf("\nD. Exit (QUIT)\n\n");
