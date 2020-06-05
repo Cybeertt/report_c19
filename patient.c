@@ -5,15 +5,7 @@
 
 #include "patient.h"
 
-/**
- * @DateCreate struct Date criacao dos dados da data.
- * 
- * @int <day> Representa o dia da data
- * @int <month> Representa o genero do paciente
- * @int <year> Representa o ano
- * 
- * @return dt retorna a data criado
- */
+
 Date DateCreate(int day, int month, int year){
 	Date dt;
 	dt.day = day;
@@ -22,24 +14,18 @@ Date DateCreate(int day, int month, int year){
 	return dt;
 }
 
-/**
- * @PatientCreate struct Patient criacao dos dados do paciente.
- * 
- * @int <id> Representa o id do paciente
- * @char <sex> Representa o genero do paciente
- * @int <birthYear> Representa o ano de nascimento do paciente
- * @char <country> Representa o pais do paciente
- * @char <region> Representa a regiao do paciente
- * @char <infectionReason> Representa a razao da infecao do paciente
- * @int <infectedBy> Representa o id do paciente
- * @Date <confirmedDate> Representa a data confirmada do paciente
- * @Date <releasedDate> Representa a data em que o paciente foi libertado
- * @Date <deceasedDate> Representa a data do falecimento do paciente
- * @char <status> Representa o estado do paciente
- * 
- * @return pt retorna o paciente criado
- */
-Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40], char province[40], char infection_case[100], long int infected_by, int day, int month, int year, char state[10]){
+Date DateRead(char* dateStr){
+	int day, month, year;
+	if(strlen(dateStr) == 0){
+		return DateCreate(0, 0, 0);
+	}
+	else {
+		sscanf(dateStr, "%2d/%2d/%4d", &day, &month, &year);
+		return DateCreate(day, month, year);
+	}
+}
+
+Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40], char province[40], char infection_case[100], long int infected_by, Date confirmed_date, Date released_date, Date deceased_date, char state[10]){
 	Patient pt;
 	pt.id = id;
 	strcpy(pt.sex, sex);
@@ -48,23 +34,14 @@ Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40],
 	strcpy(pt.province, province);
 	strcpy(pt.infection_case, infection_case);
 	pt.infected_by = infected_by;
-	pt.confirmed_date = DateCreate(day, month, year);
-	pt.released_date = DateCreate(day, month, year);
-	pt.deceased_date = DateCreate(day, month, year);
+	pt.confirmed_date = confirmed_date;
+	pt.released_date = released_date;
+	pt.deceased_date = deceased_date;
 	strcpy(pt.state, state);
 	return pt;
 }
 
-/**
- * @RegionCreate struct Region criacao dos dados da regiao.
- * 
- * @char <name> Representa o nome da regiao
- * @char <capital> Representa a capital da regiao
- * @int <population> Representa o numero de pessoas de uma regiao
- * @float <area> Representa o comprimento da area da regiao
- * 
- * @return rn retorna a regiao criado
- */
+
 Region RegionCreate(char* name, char* capital, int population, float area){
 	Region rn;
 	strcpy(rn.name, name);
@@ -117,7 +94,7 @@ int PassedDays(Patient pt1){
 	
 	return n1;
 
-  	/*if(&pt1.released_date == NULL && &pt1.deceased_date == NULL){
+  	if(&pt1.released_date == NULL && &pt1.deceased_date == NULL){
 	 
 		time_t s;
 		struct tm* current_time = malloc(sizeof(struct tm));
@@ -138,7 +115,7 @@ int PassedDays(Patient pt1){
 		n2 += r; 
 
 	return (n2 - n1);
-	} else {
+	} /*else {
 		if(&pt1.deceased_date == NULL){
 			long int n3 = pt1.released_date.year*365 + pt1.released_date.day; 
 			for (int i=0; i<pt1.released_date.month - 1; i++) 
@@ -182,37 +159,28 @@ int CurrentAge(Patient pt){
 	current_time = localtime(&s);
 
 	age = current_time->tm_year + 1900 - pt.birthYear;
-	if(pt.birthYear == '\0'){ return -1;}
-		else { return age; }
+
+	if(!pt.birthYear)	return -1;
+	else	return age;
+}
+
+long int Infect(Patient pt){
+	int i = 0; 
+
+	i = pt.infected_by;
+
+	if(!pt.infected_by)	return -1;
+	else	return i;
 }
 
 void PatientPrint(Patient pt){
 	
-	time_t s;
-	struct tm* current_time;
-	//time(&s);
-	s = time(NULL);
-
-	current_time = localtime(&s);
-
-	//int age = current_time->tm_year + 1900 - pt.birthYear;
-
-	int time = current_time->tm_year + 1900 + current_time->tm_mday;
-
 	int age = CurrentAge(pt);
 
-	//int days = PassedDays(pt);
-
-	/*const char *str = "Error";
-    char *sch_str = age;
-	str = (*sch_str != '\0') ? sch_str : "Unknown";
-
-	if(!pt.birthYear){
-		printf("ID: %ld\n SEX: %s\n AGE: Unknown\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n STATE: %s\n NUMBER OF DAYS WITH ILLNESS: %d \n\n", pt.id, pt.sex,  pt.country, pt.province, pt.infection_case, pt.infected_by, pt.state, 5);
-	} else {*/
+	long int infect = Infect(pt);
 		
-		printf("ID: %ld\n SEX: %s\n AGE: %d\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n STATE: %s \n NUMBER OF DAYS WITH ILLNESS: %d \n\n", pt.id, pt.sex, age, pt.country, pt.province, pt.infection_case, pt.infected_by, pt.state, 5);
-	//}
+	printf("ID: %ld\n SEX: %s\n AGE: %d\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n STATE: %s \n NUMBER OF DAYS WITH ILLNESS: %d \n\n", pt.id, pt.sex, age, pt.country, pt.province, pt.infection_case, infect, pt.state, 5);
+	
 }
 
 void RegionPrint(Region rn){

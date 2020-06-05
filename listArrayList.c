@@ -150,9 +150,7 @@ void listPrint(PtList list) {
 		printf("(List EMPTY)\n");
 	}
 	else {
-		printf("List contents (by rank): \n");
 		for(int rank = 0; rank < list->size; rank++) {
-			printf("Rank %2d: ", rank);
 			listElemPrint(list->elements[rank]);
 		}
 	}

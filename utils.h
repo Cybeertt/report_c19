@@ -14,11 +14,6 @@ char** split(char *string, int nFields, const char *delim);
 */
 void loadPatients(char *filename, PtList *listPT);
 
-/*int CurrentAge(PtList listPT, int birthYear, int startAge);
-
-
-int RangeAge(PtList listPT, int startAge, int *endAge);*/
-
 /**
 * @ShowPatient estrutura que imprime o id com os dados do paciente
 *
@@ -27,9 +22,11 @@ int RangeAge(PtList listPT, int startAge, int *endAge);*/
 * formato da impressao: {ID:<ID>SEX:<sex>AGE: <age>COUNTRY/REGION: <country> / <Region>INFECTION REASON: <reason>STATE: <state>NUMBER OF DAYS WITH ILLNESS: <value>}
 *
 */
-void ShowPatient(PtList listPT);
+void ShowPatient(PtList listPT, long int idn);
 
-void arrDescSort(PtList listPT);
+void arrDescSortAge(PtList listPT);
+
+void arrSortGen(PtList listPT);
 
 /**
 * @Top5ArrDescSort estrutura que imprime o top 5 o maior numero de 

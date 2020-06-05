@@ -68,13 +68,10 @@ void loadPatients(char *filename, PtList *listPT){
 			continue;
 		} 
 
-		char **tokenspt = split(nextline, 16, ";");
+		char **tokenspt = split(nextline, 11, ";");
 
-		//Date dt = DateCreate(atoi(tokensdt[0]), atoi(tokensdt[1]), atoi(tokensdt[2]));
+		Patient pt = PatientCreate(atol(tokenspt[0]), tokenspt[1], atoi(tokenspt[2]), tokenspt[3], tokenspt[4], tokenspt[5], atol(tokenspt[6]), DateRead(tokenspt[7]), DateRead(tokenspt[8]), DateRead(tokenspt[9]), tokenspt[10]);
 
-		Patient pt = PatientCreate(atoi(tokenspt[0]), tokenspt[1], atoi(tokenspt[2]), tokenspt[3], tokenspt[4], tokenspt[5], atoi(tokenspt[6]), atoi(tokenspt[7]), atoi(tokenspt[8]), atoi(tokenspt[9]), tokenspt[10]);
-
-		// free(tokensdt);  release of the memory alocated in function split
 		
 		free(tokenspt); // release of the memory alocated in function split
 
@@ -94,30 +91,47 @@ void loadPatients(char *filename, PtList *listPT){
 
 /*-------------------------------------------*/
 
-void ShowPatient(PtList listPT){	
+
+void ShowPatient(PtList listPT, long int idn){	
 	int size;
-	long int idn;
     listSize(listPT, &size);
-	
-	Patient pt;
 
-	//int age = CurrentAge(pt);	
-
-    printf("Escreva o ID do paciente: ");
-    scanf("%ld", &idn);
-	for (int i = 0; i < 1; i++) {
-		if (pt.id = idn) {
-		  printf("ID: %ld\n SEX: %s\n AGE: Unknown\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n \n\n", pt.id, pt.sex,  pt.country, pt.province, pt.infection_case, pt.infected_by);
-		}
-	}
+	Patient pt1;
+    for(int i = 0; i < size; i++){
+        listGet(listPT, i, &pt1);
+		if(pt1.id == idn){
+			PatientPrint(pt1);
+			break;
+		} 
+    }
 }
 
-void arrDescSort(PtList listPT){
+
+
+/*-------------------------------------------*/
+
+void Top5ArrDescSort(PtList listPT){	
+	int size;
+    listSize(listPT, &size);
+
+	Patient pt1;
+    for(int i = 0; i < 5; i++){
+        listGet(listPT, i, &pt1);
+			PatientPrint(pt1);
+			break;
+    }
+    
+}
+
+/*-------------------------------------------*/
+
+void arrDescSortAge(PtList listPT){
 	int size;
     listSize(listPT, &size);
 
 	Patient pt1, pt2;
 	int max;
+
     for(int i = 0; i < size; i++){
 		max = i;
         for(int j = i; j < size; j++){
@@ -125,87 +139,46 @@ void arrDescSort(PtList listPT){
             listGet(listPT, j, &pt2);
             if ( pt1.birthYear > pt2.birthYear){
 				max = j;
-            }
+            } 
         }
 		listGet(listPT, i, &pt1);
 		listSet(listPT, max, pt1, &pt2);
         listSet(listPT, i, pt2, &pt1);
     }
-}
-/*-------------------------------------------*/
-
-void Top5ArrDescSort(PtList listPT){	
-	int size;
-    listSize(listPT, &size);
 	
-	Patient pt;
-
-    /*printf("Escreva o ID do paciente: ");
-    fgets(idn, sizeof(idn), stdin);*/
-	for (int i = 0; i < 5; i++) {
-		PatientPrint(pt);
-	}
 }
 
-/*-------------------------------------------*/
-
-void Female(PtList listPT){
+void arrSortGen(PtList listPT){
 	int size;
     listSize(listPT, &size);
-	
-	
-	int agemax;
-	Patient pt1, pt2;
-	//Listar as pessoas do sexo feminino
-	if(pt1.sex == "female" && pt2.sex == "female"){
-		printf("FEMALES:\n");
-		for(int i = 0; i < size; i++){
-			agemax = i;
-		    for(int j = i; j < size; j++){
-		        listGet(listPT, agemax, &pt1);
-		        listGet(listPT, j, &pt2);
-		        if ( pt1.birthYear > pt2.birthYear){
-					agemax = j;
-		        }
-		    }
-			listGet(listPT, i, &pt1);
-			listSet(listPT, agemax, pt1, &pt2);
-		    listSet(listPT, i, pt2, &pt1);
-			PatientPrint(pt1);
-		}
-	}
-}
 
-void Male(PtList listPT){
-	int size;
-    listSize(listPT, &size);
-	
-	
-	int agemax;
 	Patient pt1, pt2;
 
-	//Listar as pessoas do sexo masculino 
-	if(pt1.sex == "male" && pt2.sex == "male"){
-		printf("\n\nMALES:\n");
-		for(int i = 0; i < size; i++){
-		    agemax = i;
-		    for(int j = i; j < size; j++){
-		        listGet(listPT, agemax, &pt1);
-		        listGet(listPT, j, &pt2);
-		        if ( pt1.birthYear > pt2.birthYear){
-					agemax = j;
-		        }
-		    }
-			listGet(listPT, i, &pt1);
-			listSet(listPT, agemax, pt1, &pt2);
-		    listSet(listPT, i, pt2, &pt1);
-		}
-	}
+	for(int i = 0; i < size; i++){
+        for(int j = 0; j < size - i - 1; j++){
+            listGet(listPT, j, &pt1);
+            listGet(listPT, j+1, &pt2);
+            if (strcmp(pt1.sex, pt2.sex) > 0){
+
+                listSet(listPT, j+1, pt1, &pt2);
+                listSet(listPT, j, pt2, &pt1);
+            }
+			//PatientPrint(pt2); //imprime lista de mulheres
+        }
+		//PatientPrint(pt1); //imprime lista de homens
+		//PatientPrint(pt2); //imprime lista de mulheres
+    }
 }
 
 void OldestArrSort(PtList listPT){	
-	Female(listPT);
-	Male(listPT);
+	//printf("Female: \n\n");
+
+	arrDescSortAge(listPT);
+	//printf("MALE: \n");
+	arrSortGen(listPT);
+	/*printf("FEMALE: \n");
+	arrSortGen(listPT);*/
+
 }
 
 /*-------------------------------------------*/
@@ -221,14 +194,6 @@ int StatePatient(PtList listPT, char* state, int startRank, int *endRank){
 	}
 	*endRank += count;
 	return count;
-	/*for(int i = 0; i < size; i++){
-		int error = listGet(listPT, i, &pt);
-		if (error != LIST_OK)
-			return -1;
-		if(pt.state == state)
-			;
-	}
-	count++;*/
 }
 
 void patientMatrix(PtList listPT){	
@@ -251,7 +216,17 @@ void patientMatrix(PtList listPT){
 	printf("\n");
 }
 
-void Report(){
+void Report(char *filename, PtList *listPT){
+
+	FILE *f = NULL;
+
+	f = fopen(filename, "r");
+
+	if (f == NULL) {
+		printf("An error ocurred... It was not possible to open the file %s ...\n", filename);
+		return;
+	}
+
 	printf("<country_ name>\n Mortality:<value> ");
 	printf("IncidentRate:<value> ");
 	printf("Lethality: <value>\n\n");

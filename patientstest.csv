@@ -1,0 +1,300 @@
+patient_id,sex,birth_year,country,province,infection_case,infected_by,confirmed_date,released_date,deceased_date,state
+1000000001,male,1964,Korea,Seoul,overseas inflow,,23/01/2020,05/02/2020,,released
+1000000002,male,1987,Korea,Seoul,overseas inflow,,30/01/2020,02/03/2020,,released
+1000000003,male,1964,Korea,Seoul,contact with patient,2002000001,30/01/2020,19/02/2020,,released
+1000000004,male,1991,Korea,Seoul,overseas inflow,,30/01/2020,15/02/2020,,released
+1000000005,female,1992,Korea,Seoul,contact with patient,1000000002,31/01/2020,24/02/2020,,released
+1000000006,female,1966,Korea,Seoul,contact with patient,1000000003,31/01/2020,19/02/2020,,released
+1000000007,male,1995,Korea,Seoul,contact with patient,1000000003,31/01/2020,10/02/2020,,released
+1000000008,male,1992,Korea,Seoul,overseas inflow,,02/02/2020,24/02/2020,,released
+1000000009,male,1983,Korea,Seoul,overseas inflow,,05/02/2020,21/02/2020,,released
+1000000010,female,1960,Korea,Seoul,contact with patient,1000000003,05/02/2020,29/02/2020,,released
+1000000011,female,1962,China,Seoul,overseas inflow,,06/02/2020,29/02/2020,,released
+1000000012,male,1992,Korea,Seoul,overseas inflow,,07/02/2020,27/02/2020,,released
+1000000013,male,1938,Korea,Seoul,contact with patient,1000000017,16/02/2020,,,released
+1000000014,female,1952,Korea,Seoul,contact with patient,1000000013,16/02/2020,12/03/2020,,released
+1000000015,male,1943,Korea,Seoul,Seongdong-gu APT,,19/02/2020,,,isolated
+1000000016,male,1945,Korea,Seoul,contact with patient,1000000017,19/02/2020,11/03/2020,,released
+1000000017,male,1944,Korea,Seoul,contact with patient,1000000003,20/02/2020,01/03/2020,,released
+1000000018,male,2000,Korea,Seoul,etc,,20/02/2020,,,isolated
+1000000019,female,1941,Korea,Seoul,contact with patient,1000000021,20/02/2020,08/03/2020,,released
+1000000020,female,1944,Korea,Seoul,Seongdong-gu APT,1000000015,20/02/2020,,,isolated
+1000000021,male,1936,Korea,Seoul,contact with patient,1000000016,20/02/2020,08/03/2020,,released
+1000000022,male,1985,Korea,Seoul,Eunpyeong St. Mary's Hospital,,21/02/2020,,,isolated
+1000000023,male,1961,Korea,Seoul,Shincheonji Church,,21/02/2020,,,isolated
+1000000024,male,1980,Korea,Seoul,contact with patient,,22/02/2020,14/03/2020,,released
+1000000025,male,1958,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000022,22/02/2020,,,isolated
+1000000026,male,1986,Korea,Seoul,etc,,22/02/2020,11/03/2020,,released
+1000000027,male,1968,Korea,Seoul,overseas inflow,,23/02/2020,04/03/2020,,released
+1000000028,female,1950,Korea,Seoul,Eunpyeong St. Mary's Hospital,,23/02/2020,11/03/2020,,released
+1000000029,female,1995,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000028,26/02/2020,11/03/2020,,released
+1000000030,male,1954,China,Seoul,Eunpyeong St. Mary's Hospital,,23/02/2020,,,released
+1000000031,male,1965,Korea,Seoul,etc,,22/02/2020,19/03/2020,,released
+1000000032,male,1962,Korea,Seoul,contact with patient,,23/02/2020,,,isolated
+1000000033,female,1970,Korea,Seoul,contact with patient,1000000031,24/02/2020,10/03/2020,,released
+1000000034,male,2000,Korea,Seoul,contact with patient,1000000031,24/02/2020,17/03/2020,,released
+1000000035,male,1984,Korea,Seoul,etc,,25/02/2020,20/03/2020,,released
+1000000036,female,1963,Korea,Seoul,Eunpyeong St. Mary's Hospital,,25/02/2020,,,isolated
+1000000037,female,1976,Korea,Seoul,contact with patient,1000000031,25/02/2020,11/03/2020,,released
+1000000038,male,1953,Korea,Seoul,etc,,25/02/2020,,,isolated
+1000000039,female,1945,China,Seoul,overseas inflow,,25/02/2020,,,released
+1000000040,female,1960,Korea,Seoul,overseas inflow,1500000002,25/02/2020,,,released
+1000000041,male,1968,Korea,Seoul,etc,,25/02/2020,04/03/2020,,released
+1000000042,male,1977,Korea,Seoul,etc,,26/02/2020,,,isolated
+1000000043,female,1995,Korea,Seoul,overseas inflow,,26/02/2020,,,released
+1000000044,male,1958,Korea,Seoul,contact with patient,,26/02/2020,,,isolated
+1000000045,male,1979,Korea,Seoul,contact with patient,1000000033,26/02/2020,04/03/2020,,released
+1000000046,female,1999,Korea,Seoul,contact with patient,1000000041,26/02/2020,03/03/2020,,released
+1000000047,male,1993,Korea,Seoul,Shincheonji Church,,26/02/2020,11/03/2020,,released
+1000000048,female,1995,Korea,Seoul,etc,,26/02/2020,13/03/2020,,released
+1000000049,male,1956,Korea,Seoul,Eunpyeong St. Mary's Hospital,,26/02/2020,,,isolated
+1000000050,male,1994,Korea,Seoul,etc,,27/02/2020,,,isolated
+1000000051,female,1992,Korea,Seoul,etc,,27/02/2020,03/03/2020,,released
+1000000052,male,1984,Korea,Seoul,overseas inflow,,27/02/2020,03/03/2020,,released
+1000000053,female,1973,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000054,27/02/2020,17/03/2020,,released
+1000000054,female,1937,Korea,Seoul,Eunpyeong St. Mary's Hospital,,27/02/2020,,,isolated
+1000000055,female,1993,Korea,Seoul,Eunpyeong St. Mary's Hospital,,27/02/2020,03/03/2020,,released
+1000000056,male,1962,Korea,Seoul,etc,,27/02/2020,13/03/2020,,released
+1000000057,female,1946,Korea,Seoul,Eunpyeong St. Mary's Hospital,,27/02/2020,,,released
+1000000058,female,1990,Korea,Seoul,etc,,27/02/2020,,,isolated
+1000000059,female,1954,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000060,28/02/2020,,,isolated
+1000000060,male,1935,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000054,28/02/2020,,,isolated
+1000000061,male,1955,Korea,Seoul,Eunpyeong St. Mary's Hospital,1000000022,28/02/2020,14/03/2020,,released
+1000000062,male,1973,Korea,Seoul,etc,2017000005,28/02/2020,,,isolated
+1000000063,male,1985,Korea,Seoul,etc,,29/02/2020,03/03/2020,,released
+1000000064,female,1985,Korea,Seoul,contact with patient,1000000047,29/02/2020,04/03/2020,,released
+1000000065,male,1987,Korea,Seoul,contact with patient,1000000068,29/02/2020,14/03/2020,,released
+1000000066,male,1986,Korea,Seoul,etc,,29/02/2020,04/03/2020,,released
+1000000067,female,1999,Korea,Seoul,contact with patient,1000000033,29/02/2020,,,released
+1000000068,female,1992,Korea,Seoul,etc,,29/02/2020,20/03/2020,,released
+1000000069,male,1974,Korea,Seoul,etc,,27/02/2020,,,released
+1000000070,female,1975,Korea,Seoul,Seongdong-gu APT,,27/02/2020,,,isolated
+1000000071,female,1990,Korea,Seoul,etc,,26/02/2020,18/03/2020,,released
+1000000072,female,1979,Korea,Seoul,etc,,27/02/2020,03/03/2020,,released
+1000000073,male,1975,Korea,Seoul,etc,,27/02/2020,,,isolated
+1000000074,male,1967,Korea,Seoul,etc,,27/02/2020,04/03/2020,,released
+1000000075,male,1982,Korea,Seoul,overseas inflow,,27/02/2020,,,isolated
+1000000076,male,1977,Korea,Seoul,contact with patient,,27/02/2020,14/03/2020,,released
+1000000077,female,1991,Korea,Seoul,etc,,28/02/2020,,,isolated
+1000000078,male,1974,Korea,Seoul,Seongdong-gu APT,1000000020,25/02/2020,,,isolated
+1000000079,female,2003,Korea,Seoul,Seongdong-gu APT,,28/02/2020,,,released
+1000000080,female,1996,Korea,Seoul,contact with patient,,29/02/2020,,,isolated
+1000000081,female,1988,Korea,Seoul,contact with patient,,29/02/2020,20/03/2020,,released
+1000000082,male,1951,Korea,Seoul,overseas inflow,,29/02/2020,,,released
+1000000083,female,1993,Korea,Seoul,contact with patient,,01/03/2020,,,isolated
+1000000084,female,1997,Korea,Seoul,contact with patient,,27/02/2020,,,isolated
+1000000085,female,1988,Korea,Seoul,overseas inflow,,27/02/2020,17/03/2020,,released
+1000000086,female,1985,Korea,Seoul,etc,,01/03/2020,,,isolated
+1000000087,male,2005,Korea,Seoul,Seongdong-gu APT,,28/02/2020,,,isolated
+1000000088,male,1975,Korea,Seoul,Seongdong-gu APT,,01/03/2020,,,isolated
+1000000089,male,1970,Korea,Seoul,Seongdong-gu APT,,01/03/2020,,,isolated
+1000000090,male,1969,Korea,Seoul,Seongdong-gu APT,,01/03/2020,,,isolated
+1000000091,male,1972,Korea,Seoul,etc,,29/02/2020,,,isolated
+1000000092,male,2000,Korea,Seoul,Seongdong-gu APT,,02/03/2020,,,isolated
+1000000093,female,1969,Korea,Seoul,etc,,02/03/2020,,,isolated
+1000000094,female,1969,Korea,Seoul,Seongdong-gu APT,,02/03/2020,,,isolated
+1000000095,female,1999,Korea,Seoul,Seongdong-gu APT,,02/03/2020,20/03/2020,,released
+1000000096,male,1982,Korea,Seoul,etc,,02/03/2020,,,isolated
+1000000097,male,1985,Korea,Seoul,contact with patient,,01/03/2020,,,isolated
+1000000098,male,1966,Korea,Seoul,etc,,02/03/2020,,,isolated
+1000000099,female,1996,Korea,Seoul,etc,,01/03/2020,,,isolated
+1000000100,male,1985,Korea,Seoul,Dongan Church,,04/03/2020,,,isolated
+1000000101,female,2005,Korea,Seoul,contact with patient,,04/03/2020,,,isolated
+1000000102,female,1971,Korea,Seoul,Seongdong-gu APT,,04/03/2020,,,isolated
+1000000103,male,1997,Korea,Seoul,overseas inflow,,04/03/2020,20/03/2020,,released
+1000000104,female,2003,Korea,Seoul,etc,,05/03/2020,,,isolated
+1000000105,male,1986,Korea,Seoul,etc,,05/03/2020,,,isolated
+1000000106,male,1986,Korea,Seoul,contact with patient,,06/03/2020,,,isolated
+1000000107,male,1985,Korea,Seoul,contact with patient,,06/03/2020,,,isolated
+1000000108,male,1979,Korea,Seoul,contact with patient,,06/03/2020,,,isolated
+1000000109,male,1929,Korea,Seoul,contact with patient,,07/03/2020,,,isolated
+1000000110,male,1964,Korea,Seoul,contact with patient,,07/03/2020,19/03/2020,,released
+1000000111,male,1984,Korea,Seoul,contact with patient,,04/03/2020,,,isolated
+1000000112,female,2013,Korea,Seoul,contact with patient,,07/03/2020,,,released
+1000000113,female,1956,Korea,Seoul,contact with patient,1000000111,06/03/2020,,,isolated
+1000000114,female,1996,Korea,Seoul,contact with patient,1000000115,07/03/2020,,,isolated
+1000000115,female,1969,Korea,Seoul,contact with patient,,06/03/2020,,,isolated
+1000000116,male,1987,Korea,Seoul,overseas inflow,,07/03/2020,,,isolated
+1000000117,male,1955,Korea,Seoul,contact with patient,1000000040,07/03/2020,,,isolated
+1000000118,male,1966,Korea,Seoul,contact with patient,1000000114,07/03/2020,,,isolated
+1000000119,male,1955,Korea,Seoul,contact with patient,1000000111,06/03/2020,,,isolated
+1000000120,male,1981,Korea,Seoul,Dongan Church,,06/03/2020,,,isolated
+1000000121,female,2020,Korea,Seoul,contact with patient,1000000120,08/03/2020,,,isolated
+1000000122,female,1995,Korea,Seoul,Dongan Church,,08/03/2020,,,isolated
+1000000123,female,1941,Korea,Seoul,etc,,08/03/2020,,,isolated
+1000000124,male,1993,Korea,Seoul,Dongan Church,,08/03/2020,,,isolated
+1000000125,female,1964,Korea,Seoul,Guro-gu Call Center,,08/03/2020,,,isolated
+1000000126,female,1982,Korea,Seoul,contact with patient,1000000120,08/03/2020,,,isolated
+1000000127,male,1969,Korea,Seoul,contact with patient,1000000108,08/03/2020,,,isolated
+1000000128,male,1951,Korea,Seoul,contact with patient,1000000120,08/03/2020,,,isolated
+1000000129,female,1952,Korea,Seoul,contact with patient,1000000120,08/03/2020,,,isolated
+1000000130,male,1993,Korea,Seoul,contact with patient,1000000100,08/03/2020,,,isolated
+1000000131,female,1969,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000132,male,1963,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000133,female,1977,Korea,Seoul,overseas inflow,,09/03/2020,,,isolated
+1000000134,female,1991,Korea,Seoul,contact with patient,1000000130,09/03/2020,,,isolated
+1000000135,male,1989,Korea,Seoul,etc,,09/03/2020,,,isolated
+1000000136,female,1970,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000137,female,1969,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000138,male,1987,Korea,Seoul,etc,,09/03/2020,,,isolated
+1000000139,male,1990,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000140,female,1978,Korea,Seoul,etc,,09/03/2020,,,isolated
+1000000141,female,1962,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000142,female,1972,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000143,male,1977,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000144,female,1971,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000145,male,1975,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000146,female,1969,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000147,male,1998,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000148,male,1965,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000149,female,1967,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000150,female,1960,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000151,female,1971,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000152,female,1974,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000153,female,1970,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000154,female,1969,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000155,female,1966,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000156,female,1985,Korea,Seoul,Guro-gu Call Center,,09/03/2020,,,isolated
+1000000157,female,1980,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000158,female,1972,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000159,female,1976,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000160,female,1960,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000161,female,1967,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000162,female,1966,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000163,female,1972,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000164,female,1959,Korea,Seoul,contact with patient,1000000140,10/03/2020,,,isolated
+1000000165,female,1971,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000166,female,1979,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000167,female,1980,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000168,female,1977,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000169,female,1971,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000170,female,1968,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000171,female,1972,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000172,female,1965,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000173,female,1962,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000174,male,1993,Korea,Seoul,contact with patient,1000000124,10/03/2020,,,isolated
+1000000175,female,1992,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000176,female,1975,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000177,male,1979,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000178,female,1995,Korea,Seoul,contact with patient,1000000100,10/03/2020,,,isolated
+1000000179,male,1970,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000180,female,1972,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000181,female,1982,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000182,female,1967,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000183,female,1967,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000184,male,1982,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000185,female,1982,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000186,female,1970,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000187,female,1968,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000188,female,1994,Korea,Seoul,contact with patient,1000000127,10/03/2020,19/03/2020,,released
+1000000189,male,1992,Korea,Seoul,contact with patient,1000000124,10/03/2020,,,isolated
+1000000190,female,1968,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000191,female,1990,Korea,Seoul,overseas inflow,1000000116,10/03/2020,,,isolated
+1000000192,female,1996,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000193,male,1991,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000194,male,1974,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000195,female,1981,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000196,female,1954,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000197,male,1953,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000198,female,1968,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000199,female,1980,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000200,female,1968,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000201,male,1989,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000202,male,1959,Korea,Seoul,Guro-gu Call Center,,10/03/2020,,,isolated
+1000000203,male,1999,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000204,male,1967,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000205,female,1994,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000206,female,2000,Korea,Seoul,etc,,11/03/2020,,,isolated
+1000000207,female,1949,Korea,Seoul,etc,,11/03/2020,20/03/2020,,released
+1000000208,male,1973,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000209,male,1941,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000210,male,1966,Korea,Seoul,etc,,11/03/2020,,,isolated
+1000000211,male,2000,Korea,Seoul,Dongan Church,,11/03/2020,,,isolated
+1000000212,female,1998,Korea,Seoul,Dongan Church,,11/03/2020,,,isolated
+1000000213,female,1994,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000214,female,1969,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000215,female,1951,Korea,Seoul,etc,,11/03/2020,,,isolated
+1000000216,male,1987,Korea,Seoul,overseas inflow,,11/03/2020,,,isolated
+1000000217,male,1992,Korea,Seoul,Dongan Church,,11/03/2020,,,isolated
+1000000218,male,1974,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000219,female,1984,Korea,Seoul,Guro-gu Call Center,,11/03/2020,,,isolated
+1000000220,male,1969,Korea,Seoul,Dongan Church,,11/03/2020,,,isolated
+1000000221,male,2007,Korea,Seoul,contact with patient,1000000164,12/03/2020,,,isolated
+1000000222,male,1964,Korea,Seoul,overseas inflow,,12/03/2020,,,isolated
+1000000223,female,1991,Korea,Seoul,Guro-gu Call Center,,12/03/2020,,,isolated
+1000000224,male,2004,Korea,Seoul,contact with patient,1000000211,12/03/2020,,,isolated
+1000000225,male,1998,Korea,Seoul,contact with patient,1000000212,12/03/2020,,,isolated
+1000000226,male,1991,Korea,Seoul,Guro-gu Call Center,,12/03/2020,,,isolated
+1000000227,male,1982,Korea,Seoul,etc,,12/03/2020,,,isolated
+1000000228,female,1958,Korea,Seoul,Guro-gu Call Center,,12/03/2020,,,isolated
+1000000229,male,1984,Korea,Seoul,overseas inflow,,12/03/2020,,,isolated
+1000000230,male,1992,Korea,Seoul,overseas inflow,,12/03/2020,,,isolated
+1000000231,female,1963,Korea,Seoul,Shincheonji Church,,12/03/2020,,,isolated
+1000000232,male,1998,Korea,Seoul,contact with patient,1000000230,13/03/2020,,,isolated
+1000000233,female,1991,Korea,Seoul,contact with patient,1000000230,13/03/2020,,,isolated
+1000000234,female,1994,Korea,Seoul,etc,,13/03/2020,,,isolated
+1000000235,male,1968,Korea,Seoul,contact with patient,,13/03/2020,,,isolated
+1000000236,male,1991,Korea,Seoul,overseas inflow,,13/03/2020,,,isolated
+1000000237,female,1998,Korea,Seoul,overseas inflow,,13/03/2020,,,isolated
+1000000238,female,1941,Korea,Seoul,Dongan Church,,13/03/2020,,,isolated
+1000000239,male,1994,Korea,Seoul,Dongan Church,,13/03/2020,,,isolated
+1000000240,male,1966,Korea,Seoul,Dongan Church,,13/03/2020,,,isolated
+1000000241,female,1953,Korea,Seoul,Dongan Church,,14/03/2020,,,isolated
+1000000242,male,1995,Korea,Seoul,contact with patient,1000000237,14/03/2020,,,isolated
+1000000243,female,1972,Korea,Seoul,contact with patient,,14/03/2020,,,isolated
+1000000244,female,1959,Korea,Seoul,Dongan Church,,14/03/2020,,,isolated
+1000000245,male,1981,Korea,Seoul,Guro-gu Call Center,,14/03/2020,,,isolated
+1000000246,male,1967,Korea,Seoul,etc,,14/03/2020,,,isolated
+1000000247,male,1969,Korea,Seoul,overseas inflow,,14/03/2020,,,isolated
+1000000248,female,1969,Korea,Seoul,Guro-gu Call Center,,14/03/2020,,,isolated
+1000000249,female,1992,Korea,Seoul,contact with patient,,15/03/2020,,,isolated
+1000000250,female,2001,Korea,Seoul,contact with patient,1000000246,15/03/2020,,,isolated
+1000000251,male,2012,Korea,Seoul,Guro-gu Call Center,,15/03/2020,,,isolated
+1000000252,male,1982,Korea,Seoul,etc,,15/03/2020,,,isolated
+1000000253,male,1967,Korea,Seoul,Guro-gu Call Center,,15/03/2020,,,isolated
+1000000254,female,1939,Korea,Seoul,Guro-gu Call Center,,15/03/2020,,,isolated
+1000000255,female,1972,Korea,Seoul,etc,,16/03/2020,,,isolated
+1000000256,female,1996,Korea,Seoul,Guro-gu Call Center,,16/03/2020,,,isolated
+1000000257,male,1986,Korea,Seoul,Guro-gu Call Center,,16/03/2020,,,isolated
+1000000258,male,1993,Korea,Seoul,Dongan Church,,16/03/2020,,,isolated
+1000000259,male,1995,Korea,Seoul,Dongan Church,,16/03/2020,,,isolated
+1000000260,male,1999,Korea,Seoul,etc,,16/03/2020,,,isolated
+1000000261,male,1978,Korea,Seoul,etc,,16/03/2020,,,isolated
+1000000262,female,1980,Korea,Seoul,Guro-gu Call Center,,16/03/2020,,,isolated
+1000000263,male,2001,Korea,Seoul,contact with patient,1000000250,16/03/2020,,,isolated
+1000000264,male,1978,Korea,Seoul,contact with patient,,16/03/2020,,,isolated
+1000000265,male,1986,Korea,Seoul,etc,,16/03/2020,,,isolated
+1000000266,male,1994,Korea,Seoul,overseas inflow,,16/03/2020,,,isolated
+1000000267,female,1967,Korea,Seoul,etc,,16/03/2020,,,isolated
+1000000268,male,2006,Korea,Seoul,Dongan Church,,17/03/2020,,,isolated
+1000000269,female,1999,Korea,Seoul,overseas inflow,,17/03/2020,,,isolated
+1000000270,female,1997,Korea,Seoul,overseas inflow,,17/03/2020,,,isolated
+1000000271,male,1994,Korea,Seoul,overseas inflow,,17/03/2020,,,isolated
+1000000272,male,1975,Korea,Seoul,overseas inflow,,18/03/2020,,,isolated
+1000000273,female,1973,Korea,Seoul,Guro-gu Call Center,,18/03/2020,,,isolated
+1000000274,female,1963,Korea,Seoul,Dongan Church,,18/03/2020,,,isolated
+1000000275,female,1982,Korea,Seoul,Guro-gu Call Center,,18/03/2020,,,isolated
+1000000276,male,2012,Korea,Seoul,Guro-gu Call Center,,18/03/2020,,,isolated
+1000000277,male,1984,Korea,Seoul,overseas inflow,,18/03/2020,,,isolated
+1000000278,female,1994,Korea,Seoul,overseas inflow,,18/03/2020,,,isolated
+1000000279,male,1929,Korea,Seoul,etc,,18/03/2020,,,isolated
+1000000280,male,1977,Korea,Seoul,etc,,18/03/2020,,,isolated
+1000000281,female,1982,Korea,Seoul,overseas inflow,,18/03/2020,,,isolated
+1000000282,male,1985,Korea,Seoul,overseas inflow,,18/03/2020,,,isolated
+1000000283,female,1941,Korea,Seoul,etc,,19/03/2020,,,isolated
+1000000284,female,1934,Korea,Seoul,contact with patient,1000000279,19/03/2020,,,isolated
+1000000285,male,1976,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000286,female,2008,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000287,male,2005,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000288,female,1961,Korea,Seoul,contact with patient,1000000279,19/03/2020,,,isolated
+1000000289,male,1997,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated
+1000000290,female,1985,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated
+1000000291,female,1964,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000292,female,1971,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated
+1000000293,female,1954,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000294,female,1959,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated
+1000000295,female,1984,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated
+1000000296,female,1969,Korea,Seoul,Guro-gu Call Center,,19/03/2020,,,isolated
+1000000297,female,1991,Korea,Seoul,contact with patient,1000000266,19/03/2020,,,isolated
+1000000298,female,1965,Korea,Seoul,contact with patient,1000000266,19/03/2020,,,isolated
+1000000299,male,1972,Korea,Seoul,overseas inflow,,19/03/2020,,,isolated

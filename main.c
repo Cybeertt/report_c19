@@ -83,12 +83,17 @@ int main(int argc, char** argv) {
 			
 			PtList listPT = NULL;
 
+			long int idn;
+
 			char filename[100] =  "patients.csv";
 
 			/*Import data from file*/
 			loadPatients(filename, &listPT);
 
-			ShowPatient(listPT);
+			printf("Escreva o id do paciente: ");
+			scanf("%ld", &idn);
+
+			ShowPatient(listPT, idn);
 
 			listDestroy(&listPT);
 			printf("Comando SHOW nao implementado.\n");
@@ -100,12 +105,10 @@ int main(int argc, char** argv) {
 
 			PtList listPT = NULL;
 
-			char filename[100] =  "patients.csv";
+			char filename[150] =  "patients.csv";
 
 			/*Import data from file*/
 			loadPatients(filename, &listPT);
-
-			arrDescSort(listPT);
 
 			OldestArrSort(listPT);
 
