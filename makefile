@@ -10,8 +10,12 @@ test:
 	gcc -g -o prog main.c
 
 all:
+<<<<<<< HEAD
 	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c sort.c
 
+=======
+	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c
+>>>>>>> 135c963576168064c39fd14a9d85fc96b5106a05
 clean:
 	rm -f prog
 
