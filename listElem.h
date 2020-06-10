@@ -2,7 +2,7 @@
 
 #include "patient.h"
 
-typedef Patient ListElem; // Defining ListElem as KahootReport
+typedef Patient ListElem; // Defining ListElem as Patient
 
-/* Function to print a listElem === KahootReport */
+/* Function to print a listElem === Patient */
 void listElemPrint(ListElem elem);

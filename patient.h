@@ -1,8 +1,6 @@
 #pragma once
 
-typedef struct date {
-	unsigned int day, month, year;
-} Date;
+#include "date.h"
 
 typedef struct patient{
 	long int id;
@@ -25,27 +23,7 @@ typedef struct region{
 	float area;
 }Region;
 
-/**
- * @DateCreate struct Date criacao dos dados da data.
- * 
- * @int <day> Representa o dia da data
- * @int <month> Representa o genero do paciente
- * @int <year> Representa o ano
- * 
- * @return dt retorna a data criada
- */
-Date DateCreate(int day, int month, int year);
-
-/**
- * @DateCreate struct Date criacao dos dados da data.
- * 
- * @int <day> Representa o dia da data
- * @int <month> Representa o genero do paciente
- * @int <year> Representa o ano
- * 
- * @return DateCreate(d/m/y) retorna a data criado
- */
-Date DateRead(char* dateStr);
+/*-------------------------------------------*/
 
 /**
  * @PatientCreate struct Patient criacao dos dados do paciente.
@@ -66,6 +44,8 @@ Date DateRead(char* dateStr);
  */
 Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40], char region[40], char infectionReason[100], long int infectedBy, Date confirmed_date, Date released_date, Date deceased_date, char state[10]);
 
+/*-------------------------------------------*/
+
 /**
  * @RegionCreate struct Region criacao dos dados da regiao.
  * 
@@ -78,20 +58,15 @@ Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40],
  */
 Region RegionCreate(char* name, char* capital, int population, float area);
 
-void DatePrint(Date dt);
+/*-------------------------------------------*/
 
-
-int countLeapYears(Date d); 
-
-
-int PassedDays(Patient pt1);
-
-int CurrentAge(Patient pt);
 
 long int Infect(Patient pt);
 
 
 void PatientPrint(Patient pt);
+
+void PatientTopPrint(Patient pt);
 
 
 void RegionPrint(Region rn);

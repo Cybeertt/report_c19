@@ -1,12 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdbool.h>
 #include <time.h>
+#include <string.h>
 
+#include "cadeia_caracteres.h"
+#include "date.h"
 #include "list.h"
 #include "utils.h"
 #include "patient.h"
+
+const int monthDays[12] = {31, 28, 31, 30, 31, 30, 
+                           31, 31, 30, 31, 30, 31}; 
 
 char** split(char *string, int nFields, const char *delim) {
 
@@ -38,164 +43,132 @@ char** split(char *string, int nFields, const char *delim) {
 
 }
 
+
+
 /*-------------------------------------------*/
 
-void loadPatients(char *filename, PtList *listPT){
+int CurrentAge(Patient pt){
+	int age = 0; 
 
-	FILE *f = NULL;
+	time_t s;
+	struct tm* current_time;
 
-	f = fopen(filename, "r");
+	s = time(NULL);
 
-	if (f == NULL) {
-		printf("An error ocurred... It was not possible to open the file %s ...\n", filename);
-		return;
+	current_time = localtime(&s);
+
+	age = current_time->tm_year + 1900 - pt.birthYear;
+
+	if(!pt.birthYear)	return -1;
+	else	return age;
+}
+
+/*-------------------------------------------*/
+
+int countLeapYears(Date d) 
+{ 
+    int years = d.year; 
+  
+    if (d.month <= 2) 
+        years--; 
+  
+    // Calculo o numero de anos
+    return years / 4 - years / 100 + years / 400; 
+} 
+
+/*-------------------------------------------*/
+
+int CurrentDays(Patient pt){
+	int days;
+
+	time_t s;
+	struct tm* current_time;
+
+	s = time(NULL);
+
+	current_time = localtime(&s);
+
+	Date nowDate = DateCreate(current_time->tm_mday, current_time->tm_mon + 1, current_time->tm_year + 1900);
+
+	int current = nowDate.year*365 + nowDate.day;	
+
+	for (int i=0; i<nowDate.month - 1; i++) 
+        	current += monthDays[i];
+
+		current += countLeapYears(nowDate);	
+
+	Date dt, dt1, dt2;
+
+	dt = DateCreate(pt.confirmed_date.day, pt.confirmed_date.month, pt.confirmed_date.year);
+
+	dt1 = DateCreate(pt.released_date.day, pt.released_date.month, pt.released_date.year);
+
+	dt2 = DateCreate(pt.deceased_date.day, pt.deceased_date.month, pt.deceased_date.year);
+
+	int time = dt.year*365 + dt.day;
+
+	for (int i=0; i<dt.month - 1; i++) 
+        	time += monthDays[i];
+
+		time += countLeapYears(dt);	
+
+	int time2 = dt1.year*365 + dt1.day;
+
+	int time3 = dt2.year*365 + dt2.day;
+
+	if (!time2 && !time3) {
+
+		return current - time;
+
+		 
+	} else if (!time3) {
+		for (int i=0; i<dt1.month - 1; i++) 
+        	time2 += monthDays[i];
+
+		time2 += countLeapYears(dt1);	
+
+		return time2 - time;
+	}
+	else if (!time2) {
+		for (int i=0; i<dt2.month - 1; i++) 
+        	time3 += monthDays[i];
+
+		time3 += countLeapYears(dt2);	
+
+
+		return time3 - time;
 	}
 
-	char nextline[1024];
-
-	int countPT = 0; 
-	bool firstLine = true;
-
-	*listPT = listCreate(10);
-
-	while (fgets(nextline, sizeof(nextline), f)) {
-		if (strlen(nextline) < 1)
-			continue;
-
-		/*As the first line of the file contains the names of the fields it should be ignored*/
-		if (firstLine){
-			firstLine = false;
-			continue;
-		} 
-
-		char **tokenspt = split(nextline, 11, ";");
-
-		Patient pt = PatientCreate(atol(tokenspt[0]), tokenspt[1], atoi(tokenspt[2]), tokenspt[3], tokenspt[4], tokenspt[5], atol(tokenspt[6]), DateRead(tokenspt[7]), DateRead(tokenspt[8]), DateRead(tokenspt[9]), tokenspt[10]);
-
-		
-		free(tokenspt); // release of the memory alocated in function split
-
-		int error_code = listAdd(*listPT, countPT, pt);
-
-		if (error_code == LIST_FULL ||error_code == LIST_INVALID_RANK || 
-		    error_code == LIST_NO_MEMORY || error_code == LIST_NULL){
-			printf("An error ocurred... Please try again... \n");
-			return;
-		}
-		countPT++;
-	}
-	
-	printf("\n\n%d patient reports were read!\n\n", countPT);
-	fclose(f);
+	//return dt.day;
 }
 
 /*-------------------------------------------*/
 
+int StatePatient(PtList listPT){
 
-void ShowPatient(PtList listPT, long int idn){	
 	int size;
     listSize(listPT, &size);
 
-	Patient pt1;
-    for(int i = 0; i < size; i++){
-        listGet(listPT, i, &pt1);
-		if(pt1.id == idn){
-			PatientPrint(pt1);
-			break;
-		} 
-    }
-}
+	String estadoAtual = { 0 };
 
-
-
-/*-------------------------------------------*/
-
-void Top5ArrDescSort(PtList listPT){	
-	int size;
-    listSize(listPT, &size);
-
-	Patient pt1;
-    for(int i = 0; i < 5; i++){
-        listGet(listPT, i, &pt1);
-			PatientPrint(pt1);
-			break;
-    }
-    
-}
-
-/*-------------------------------------------*/
-
-void arrDescSortAge(PtList listPT){
-	int size;
-    listSize(listPT, &size);
-
-	Patient pt1, pt2;
-	int max;
-
-    for(int i = 0; i < size; i++){
-		max = i;
-        for(int j = i; j < size; j++){
-            listGet(listPT, max, &pt1);
-            listGet(listPT, j, &pt2);
-            if ( pt1.birthYear > pt2.birthYear){
-				max = j;
-            } 
-        }
-		listGet(listPT, i, &pt1);
-		listSet(listPT, max, pt1, &pt2);
-        listSet(listPT, i, pt2, &pt1);
-    }
-	
-}
-
-void arrSortGen(PtList listPT){
-	int size;
-    listSize(listPT, &size);
-
-	Patient pt1, pt2;
-
-	for(int i = 0; i < size; i++){
-        for(int j = 0; j < size - i - 1; j++){
-            listGet(listPT, j, &pt1);
-            listGet(listPT, j+1, &pt2);
-            if (strcmp(pt1.sex, pt2.sex) > 0){
-
-                listSet(listPT, j+1, pt1, &pt2);
-                listSet(listPT, j, pt2, &pt1);
-            }
-			//PatientPrint(pt2); //imprime lista de mulheres
-        }
-		//PatientPrint(pt1); //imprime lista de homens
-		//PatientPrint(pt2); //imprime lista de mulheres
-    }
-}
-
-void OldestArrSort(PtList listPT){	
-	//printf("Female: \n\n");
-
-	arrDescSortAge(listPT);
-	//printf("MALE: \n");
-	arrSortGen(listPT);
-	/*printf("FEMALE: \n");
-	arrSortGen(listPT);*/
-
-}
-
-/*-------------------------------------------*/
-
-int StatePatient(PtList listPT, char* state, int startRank, int *endRank){
 	Patient pt;
-	int sum = 0, count = 0;
-	listGet(listPT, startRank, &pt);
-	while(pt.state == state){
+	int count = 0;
+	
+	for(int i = 0; i < size; i++){
+		listGet(listPT, i, &pt);
+		
+		if (strcmp(estadoAtual, pt.state) == 0) {
+			continue;
+		}
+		
 		count++;
-		int error = listGet(listPT, ++startRank, &pt);
-		if (error != LIST_OK) break;
+		strcpy(estadoAtual, pt.state);
 	}
-	*endRank += count;
+
 	return count;
 }
 
+/*
 void patientMatrix(PtList listPT){	
 
 	Patient pt;
@@ -238,5 +211,5 @@ void Report(char *filename, PtList *listPT){
 	printf("Lethality: <value>\n\n");
 	printf("-------------------------------------------\n\n");
 }
-
+*/
 

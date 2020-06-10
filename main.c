@@ -12,10 +12,11 @@
 #include <string.h>
 #include <locale.h>
 
+#include "cadeia_caracteres.h"
 #include "list.h"
+#include "loadp.h"
+#include "sort.h"
 #include "utils.h"
-
-typedef char String[255];
 
 /* definicao de prototipos de funcoes, definidas depois do main() */
 int equalsStringIgnoreCase(char str1[], char str2[]);
@@ -28,7 +29,9 @@ void printCommandsMenu();
 int main(int argc, char** argv) {
 
 	/* declaracao de variaveis */
-	
+
+	PtList listPT = NULL;	
+
 	/* interpretador de comandos */
 	String command;
 	int quit = 0;
@@ -48,17 +51,17 @@ int main(int argc, char** argv) {
 		else if (equalsStringIgnoreCase(command, "LOADP")) {
 			/* invocação da função responsável pela respetiva
 			funcionalidade. Remover printf seguinte após implementação */
-			
-			PtList listPT = NULL;
+			//LoadP(listPT); 
 
 			char filename[100] =  "patients.csv";
 
 			/*Import data from file*/
 			loadPatients(filename, &listPT);
 
-			listPrint(listPT);
+			//listPrint(listPT);
 
-			listDestroy(&listPT);			
+
+			//listDestroy(&listPT);			
 
 			printf("Comando LOADP nao implementado.\n");
 		}
@@ -80,8 +83,6 @@ int main(int argc, char** argv) {
 			printf("Comando SEX nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "SHOW")) {
-			
-			PtList listPT = NULL;
 
 			long int idn;
 
@@ -99,11 +100,18 @@ int main(int argc, char** argv) {
 			printf("Comando SHOW nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "TOP5")) {
+
+			char filename[150] =  "patients.csv";
+
+			/*Import data from file*/
+			loadPatients(filename, &listPT);
+
+			Top5ArrDescSort(listPT);
+				
+
 			printf("Comando TOP5 nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "OLDEST")) {
-
-			PtList listPT = NULL;
 
 			char filename[150] =  "patients.csv";
 
@@ -121,16 +129,6 @@ int main(int argc, char** argv) {
 		}	
 		else if (equalsStringIgnoreCase(command, "MATRIX")) {
 			
-			PtList listPT = NULL;
-
-			char filename[100] =  "patients.csv";
-			
-
-			/*Import data from file*/
-			loadPatients(filename, &listPT);
-
-			patientMatrix(listPT);
-
 			printf("Comando MATRIX nao implementado.\n");
 
 		}
