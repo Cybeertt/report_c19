@@ -1,6 +1,6 @@
 CFLAGS=-g -Wall
 CC=gcc
-objects= main.o list.o utils.o patient.o
+objects= main.o list.o utils.o patient.o load.o sort.o date.o string.o
 prog: $(objects)
 	$(CC) $(CFLAGS) -o prog $^ -lm
 
@@ -9,17 +9,8 @@ $(objects):
 test:
 	gcc -g -o prog main.c
 
-n1:
-	gcc -g -o prog main.c patient.c utils.c listElem.c listArrayList.c
-n2:
-	gcc -g -o prog main2.c kahootReport.c utils.c listElem.c listArrayList.c
-n3:
-	gcc -g -o prog main3.c kahootReport.c utils.c listElem.c listArrayList.c
-n4:
-	gcc -g -o prog main4.c kahootReport.c utils.c listElem.c listArrayList.c
-n5:
-	#gcc -g -o prog main5.c kahootReport.c utils.c listElem.c listLinkedList.c
-	gcc -g -o prog main5.c kahootReport.c utils.c listElem.c listArrayList.c
+all:
+	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c
 clean:
 	rm -f prog
 
@@ -28,3 +19,11 @@ list.o: list.h
 utils.o: utils.h
 
 patient.o: patient.h
+
+load.o: load.h
+
+sort.o: sort.h
+
+date.o: date.h
+
+string.o:cadeia_carateres.h

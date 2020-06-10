@@ -6,25 +6,6 @@
 #include "patient.h"
 
 
-Date DateCreate(int day, int month, int year){
-	Date dt;
-	dt.day = day;
-	dt.month = month;
-	dt.year = year;
-	return dt;
-}
-
-Date DateRead(char* dateStr){
-	int day, month, year;
-	if(strlen(dateStr) == 0){
-		return DateCreate(0, 0, 0);
-	}
-	else {
-		sscanf(dateStr, "%2d/%2d/%4d", &day, &month, &year);
-		return DateCreate(day, month, year);
-	}
-}
-
 Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40], char province[40], char infection_case[100], long int infected_by, Date confirmed_date, Date released_date, Date deceased_date, char state[10]){
 	Patient pt;
 	pt.id = id;
@@ -51,9 +32,6 @@ Region RegionCreate(char* name, char* capital, int population, float area){
 	return rn;
 }
 
-void DatePrint(Date dt){
-	printf(" %d/%d/%d\n", dt.day, dt.month, dt.year);
-}
 
 
 /*int countLeapYears(Patient p) 

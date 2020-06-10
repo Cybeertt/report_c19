@@ -1,8 +1,6 @@
 #pragma once
 
-typedef struct date {
-	unsigned int day, month, year;
-} Date;
+#include "date.h"
 
 typedef struct patient{
 	long int id;

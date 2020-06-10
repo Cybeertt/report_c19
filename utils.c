@@ -40,91 +40,6 @@ char** split(char *string, int nFields, const char *delim) {
 
 /*-------------------------------------------*/
 
-void loadPatients(char *filename, PtList *listPT){
-
-	FILE *f = NULL;
-
-	f = fopen(filename, "r");
-
-	if (f == NULL) {
-		printf("An error ocurred... It was not possible to open the file %s ...\n", filename);
-		return;
-	}
-
-	char nextline[1024];
-
-	int countPT = 0; 
-	bool firstLine = true;
-
-	*listPT = listCreate(10);
-
-	while (fgets(nextline, sizeof(nextline), f)) {
-		if (strlen(nextline) < 1)
-			continue;
-
-		/*As the first line of the file contains the names of the fields it should be ignored*/
-		if (firstLine){
-			firstLine = false;
-			continue;
-		} 
-
-		char **tokenspt = split(nextline, 11, ";");
-
-		Patient pt = PatientCreate(atol(tokenspt[0]), tokenspt[1], atoi(tokenspt[2]), tokenspt[3], tokenspt[4], tokenspt[5], atol(tokenspt[6]), DateRead(tokenspt[7]), DateRead(tokenspt[8]), DateRead(tokenspt[9]), tokenspt[10]);
-
-		
-		free(tokenspt); // release of the memory alocated in function split
-
-		int error_code = listAdd(*listPT, countPT, pt);
-
-		if (error_code == LIST_FULL ||error_code == LIST_INVALID_RANK || 
-		    error_code == LIST_NO_MEMORY || error_code == LIST_NULL){
-			printf("An error ocurred... Please try again... \n");
-			return;
-		}
-		countPT++;
-	}
-	
-	printf("\n\n%d patient reports were read!\n\n", countPT);
-	fclose(f);
-}
-
-/*-------------------------------------------*/
-
-
-void ShowPatient(PtList listPT, long int idn){	
-	int size;
-    listSize(listPT, &size);
-
-	Patient pt1;
-    for(int i = 0; i < size; i++){
-        listGet(listPT, i, &pt1);
-		if(pt1.id == idn){
-			PatientPrint(pt1);
-			break;
-		} 
-    }
-}
-
-
-
-/*-------------------------------------------*/
-
-void Top5ArrDescSort(PtList listPT){	
-	int size;
-    listSize(listPT, &size);
-
-	Patient pt1;
-    for(int i = 0; i < 5; i++){
-        listGet(listPT, i, &pt1);
-			PatientPrint(pt1);
-			break;
-    }
-    
-}
-
-/*-------------------------------------------*/
-
 void arrDescSortAge(PtList listPT){
 	int size;
     listSize(listPT, &size);
@@ -144,6 +59,7 @@ void arrDescSortAge(PtList listPT){
 		listGet(listPT, i, &pt1);
 		listSet(listPT, max, pt1, &pt2);
         listSet(listPT, i, pt2, &pt1);
+		//PatientPrint(pt2);
     }
 	
 }
@@ -171,13 +87,11 @@ void arrSortGen(PtList listPT){
 }
 
 void OldestArrSort(PtList listPT){	
-	//printf("Female: \n\n");
 
 	arrDescSortAge(listPT);
-	//printf("MALE: \n");
+
 	arrSortGen(listPT);
-	/*printf("FEMALE: \n");
-	arrSortGen(listPT);*/
+
 
 }
 

@@ -12,10 +12,10 @@
 #include <string.h>
 #include <locale.h>
 
+#include "cadeia_caracteres.h"
 #include "list.h"
+#include "loadp.h"
 #include "utils.h"
-
-typedef char String[255];
 
 /* definicao de prototipos de funcoes, definidas depois do main() */
 int equalsStringIgnoreCase(char str1[], char str2[]);
@@ -28,6 +28,8 @@ void printCommandsMenu();
 int main(int argc, char** argv) {
 
 	/* declaracao de variaveis */
+
+	PtList listPT = NULL;
 	
 	/* interpretador de comandos */
 	String command;
@@ -48,17 +50,8 @@ int main(int argc, char** argv) {
 		else if (equalsStringIgnoreCase(command, "LOADP")) {
 			/* invocação da função responsável pela respetiva
 			funcionalidade. Remover printf seguinte após implementação */
-			
-			PtList listPT = NULL;
 
-			char filename[100] =  "patients.csv";
-
-			/*Import data from file*/
-			loadPatients(filename, &listPT);
-
-			listPrint(listPT);
-
-			listDestroy(&listPT);			
+			LoadP(listPT);			
 
 			printf("Comando LOADP nao implementado.\n");
 		}
@@ -80,8 +73,6 @@ int main(int argc, char** argv) {
 			printf("Comando SEX nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "SHOW")) {
-			
-			PtList listPT = NULL;
 
 			long int idn;
 
@@ -103,8 +94,6 @@ int main(int argc, char** argv) {
 		}
 		else if (equalsStringIgnoreCase(command, "OLDEST")) {
 
-			PtList listPT = NULL;
-
 			char filename[150] =  "patients.csv";
 
 			/*Import data from file*/
@@ -121,7 +110,6 @@ int main(int argc, char** argv) {
 		}	
 		else if (equalsStringIgnoreCase(command, "MATRIX")) {
 			
-			PtList listPT = NULL;
 
 			char filename[100] =  "patients.csv";
 			

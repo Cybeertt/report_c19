@@ -2,28 +2,6 @@
 
 char** split(char *string, int nFields, const char *delim);
 
-/**
-* @loadPatients estrutura  que efetua o carregamento de um ficheiro 
-* csv com todos os dados dos pacientes d
-*
-* @param [char] *filename nome do ficheiro csv
-* @param [PtList] *listPT array com dados do ficheiro csv
-*
-* formato da impressao: {n de relatorios de pacientes foram lidos}
-*
-*/
-void loadPatients(char *filename, PtList *listPT);
-
-/**
-* @ShowPatient estrutura que imprime o id com os dados do paciente
-*
-* @param [PtList] listPT array com dados do ficheiro csv
-*
-* formato da impressao: {ID:<ID>SEX:<sex>AGE: <age>COUNTRY/REGION: <country> / <Region>INFECTION REASON: <reason>STATE: <state>NUMBER OF DAYS WITH ILLNESS: <value>}
-*
-*/
-void ShowPatient(PtList listPT, long int idn);
-
 void arrDescSortAge(PtList listPT);
 
 void arrSortGen(PtList listPT);
