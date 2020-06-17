@@ -2,9 +2,15 @@
 
 char** split(char *string, int nFields, const char *delim);
 
+PtList copyList(PtList list);
+
+long int Infect(Patient pt);
+
 int CurrentAge(Patient pt);
 
-int StatePatient(PtList listPT);
+int StatePatient(PtList listPT, int listSize);
+
+Date recentdate(PtList listPT);
 
 int countLeapYears(Date d);
 
@@ -20,4 +26,4 @@ int CurrentDays(Patient pt);
 * Released - 100 ...}
 *
 */
-//void patientMatrix(PtList listPT);
+void patientMatrix(PtList listPT);

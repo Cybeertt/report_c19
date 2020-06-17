@@ -13,6 +13,7 @@
 #include <locale.h>
 
 #include "cadeia_caracteres.h"
+#include "info.h"
 #include "list.h"
 #include "loadp.h"
 #include "sort.h"
@@ -51,19 +52,12 @@ int main(int argc, char** argv) {
 		else if (equalsStringIgnoreCase(command, "LOADP")) {
 			/* invocação da função responsável pela respetiva
 			funcionalidade. Remover printf seguinte após implementação */
-			//LoadP(listPT); 
-
-			char filename[100] =  "patients.csv";
-
+		
 			/*Import data from file*/
-			loadPatients(filename, &listPT);
+			LoadP(&listPT);		
 
 			//listPrint(listPT);
 
-
-			//listDestroy(&listPT);			
-
-			printf("Comando LOADP nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "LOADR")) {
 			/* invocação da função responsável pela respetiva
@@ -71,6 +65,9 @@ int main(int argc, char** argv) {
 			printf("Comando LOADR nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "CLEAR")) {
+		
+			clearData(listPT);
+
 			printf("Comando CLEAR nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "AVERAGE")) {
@@ -84,50 +81,26 @@ int main(int argc, char** argv) {
 		}
 		else if (equalsStringIgnoreCase(command, "SHOW")) {
 
-			long int idn;
+			Show(listPT);
 
-			char filename[100] =  "patients.csv";
-
-			/*Import data from file*/
-			loadPatients(filename, &listPT);
-
-			printf("Escreva o id do paciente: ");
-			scanf("%ld", &idn);
-
-			ShowPatient(listPT, idn);
-
-			listDestroy(&listPT);
-			printf("Comando SHOW nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "TOP5")) {
 
-			char filename[150] =  "patients.csv";
-
-			/*Import data from file*/
-			loadPatients(filename, &listPT);
-
-			Top5ArrDescSort(listPT);
+			Top5(listPT);
 				
-
 			printf("Comando TOP5 nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "OLDEST")) {
 
-			char filename[150] =  "patients.csv";
-
-			/*Import data from file*/
-			loadPatients(filename, &listPT);
-
 			OldestArrSort(listPT);
 
-			listPrint(listPT);
-
-			printf("Comando OLDEST nao implementado.\n");
 		}
 		else if (equalsStringIgnoreCase(command, "GROWTH")) {
 			printf("Comando GROWTH nao implementado.\n");
 		}	
 		else if (equalsStringIgnoreCase(command, "MATRIX")) {
+
+			patientMatrix(listPT);
 			
 			printf("Comando MATRIX nao implementado.\n");
 
@@ -144,6 +117,7 @@ int main(int argc, char** argv) {
 	}
 
 	/* libertar memória e apresentar mensagem de saída. */
+	listDestroy(&listPT);
 
 	return (EXIT_SUCCESS);
 }

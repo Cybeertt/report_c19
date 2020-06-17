@@ -16,13 +16,6 @@ typedef struct patient{
 	char state[10];//{“isolated,“released”,“deceased”}
 }Patient;
 
-typedef struct region{
-	char name[40];
-	char capital[40];
-	int population;
-	float area;
-}Region;
-
 /*-------------------------------------------*/
 
 /**
@@ -47,27 +40,20 @@ Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40],
 /*-------------------------------------------*/
 
 /**
- * @RegionCreate struct Region criacao dos dados da regiao.
+ * @PatientPrint imprime um paciente com todos os dados incluindo a idade.
  * 
- * @char <name> Representa o nome da regiao
- * @char <capital> Representa a capital da regiao
- * @int <population> Representa o numero de pessoas de uma regiao
- * @float <area> Representa o comprimento da area da regiao
+ * @param [Patient] pt com dados do paciente do ficheiro csv
  * 
- * @return rn retorna a regiao criado
+ * formato da impressao: {ID:<ID>SEX:<sex>AGE: <age>COUNTRY/REGION: <country> / <Region>INFECTION REASON: <reason>STATE: <state>}
  */
-Region RegionCreate(char* name, char* capital, int population, float area);
-
-/*-------------------------------------------*/
-
-
-long int Infect(Patient pt);
-
-
 void PatientPrint(Patient pt);
 
+/**
+ * @PatientTopPrint imprime um paciente com todos os dados incluindo a idade e o numero de dias que o paciente está enternado.
+ * 
+ * @param [Patient] pt com dados do paciente do ficheiro csv
+ * 
+ * formato da impressao: {ID:<ID> SEX:<sex> AGE: <age> COUNTRY/REGION: <country> / <Region> INFECTION REASON: <reason> STATE: <state> NUMBER OF DAYS WITH ILLNESS: <value>}
+ */
 void PatientTopPrint(Patient pt);
-
-
-void RegionPrint(Region rn);
 

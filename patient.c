@@ -24,27 +24,7 @@ Patient PatientCreate(long int id, char sex[6], int birthYear, char country[40],
 	return pt;
 }
 
-
-Region RegionCreate(char* name, char* capital, int population, float area){
-	Region rn;
-	strcpy(rn.name, name);
-	strcpy(rn.capital, capital);
-	rn.population = population;
-	rn.area = area;
-	return rn;
-}
-
 /*-------------------------------------------*/
-
-
-long int Infect(Patient pt){
-	int i = 0; 
-
-	i = pt.infected_by;
-
-	if(!pt.infected_by)	return -1;
-	else	return i;
-}
 
 void PatientPrint(Patient pt){
 	
@@ -57,23 +37,16 @@ void PatientPrint(Patient pt){
 	
 }
 
-void PatientTopPrint(Patient pt){
-	
+void PatientTopPrint(Patient pt){	
+
 	int age = CurrentAge(pt);
 
 	long int infect = Infect(pt);
 
-	int day = CurrentDays(pt);
+	int day = CurrentDays(pt);    
 		
-	printf("ID: %ld\n SEX: %s\n AGE: %d\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n STATE: %s \n NUMBER OF DAYS WITH ILLNESS: %d \n\n", pt.id, pt.sex, age, pt.country, pt.province, pt.infection_case, infect, pt.state, day);
+	printf("ID: %ld\n SEX: %s\n AGE: %d\n COUNTRY/REGION: %s/%s| INFECTION REASON: %s\n INFECTION BY: %ld\n STATE: %s \n NUMBER OF DAYS WITH ILLNESS: %d\n\n", pt.id, pt.sex, age, pt.country, pt.province, pt.infection_case, infect, pt.state, day);
 	
-}
-
-
-
-
-void RegionPrint(Region rn){
-	printf(" %s| %s| %d| %f\n", rn.name, rn.capital, rn.population, rn.area);
 }
 
 
