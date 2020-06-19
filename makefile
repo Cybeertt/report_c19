@@ -10,7 +10,7 @@ test:
 	gcc -g -o prog main.c
 
 all:
-	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c loadr.c sort.c info.c mapArrayList.c mapElem.c stringCode.c report.c region.c
+	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c  sort.c info.c stringCode.c  region.c
 
 clean:
 	rm -f prog

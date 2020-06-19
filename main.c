@@ -87,8 +87,7 @@ int main(int argc, char** argv) {
 		else if (equalsStringIgnoreCase(command, "TOP5")) {
 
 			Top5(listPT);
-				
-			printf("Comando TOP5 nao implementado.\n");
+
 		}
 		else if (equalsStringIgnoreCase(command, "OLDEST")) {
 
@@ -101,8 +100,6 @@ int main(int argc, char** argv) {
 		else if (equalsStringIgnoreCase(command, "MATRIX")) {
 
 			patientMatrix(listPT);
-			
-			printf("Comando MATRIX nao implementado.\n");
 
 		}
 		else if (equalsStringIgnoreCase(command, "REGIONS")) {

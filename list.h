@@ -1,12 +1,3 @@
-/**
- * @file list.h
- * @brief Definition of the ADT List in C.
- * 
- * Defines the type PtList and associated operations.
- * 
- * @author Bruno Silva (brunomnsilva@gmail.com)
- * @bug No known bugs.
- */
 
 #pragma once
 

@@ -8,13 +8,13 @@ long int Infect(Patient pt);
 
 int CurrentAge(Patient pt);
 
-int StatePatient(PtList listPT, int listSize);
-
 Date recentdate(PtList listPT);
 
 int countLeapYears(Date d);
 
 int CurrentDays(Patient pt);
+
+int statePatient(PtList listPT, int size, char* estadoAtual, int min, int max);
 
 /**
 * @patientMatrix estrutura que imprime o numero de isolados, libertados

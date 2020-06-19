@@ -211,59 +211,80 @@ int CurrentDays(Patient pt){
 
 /*-------------------------------------------*/
 
-int StatePatient(PtList listPT, int ls){
+int statePatient(PtList listPT, int size, char* estadoAtual, int min, int max){
 
-	String estadoAtual = { 0 };
-
-	Patient pt;
 	int count = 0;
-	
-	for(int i = 0; i < ls; i++){
+
+	Patient pt;	
+
+	for (int i=0; i<size; i++){ 
 		listGet(listPT, i, &pt);
-		
-		if (strcmp(estadoAtual, pt.state) == 0) {
-			continue;
-		}
-		
-		count++;
-		strcpy(estadoAtual, pt.state);
+		//printf("%s ", pt.state);
+		//int age = 2020 - pt.birthYear;
+
+		int age = CurrentAge(pt);
+        if (strncmp(estadoAtual, pt.state, strlen(estadoAtual)) == 0 && min < age && age < max)
+			count++;
+		 
 	}
 
 	return count;
 }
 
+void patientMatrix(PtList listPT){	
 
-
-int PatientStatus(PtList listPT){
 	int size;
 	listSize(listPT, &size);
-	//bubbleSortDistrict(patients, size);
-
-	int statusCount = StatePatient(listPT, size);
-
-	return statusCount;
-}
-
-
-void patientMatrix(PtList listPT){	
 
 	if (listIsEmpty(listPT) == 1) {
 		
 		return;
 	}
 
-	// Initialize
-	PtList auxList = copyList(listPT);
+	
 
 	// Print
-	printf("\n%d", PatientStatus(listPT));
+
+	printf("           Isolated    Released    Deceased");
+
+	printf("\n[0 - 15]   %5d", statePatient(listPT, size, "isolated", 0, 15));
+
+	printf("%12d", statePatient(listPT, size, "released", 0, 15));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 0, 15));
+	
+	printf("\n[16 - 30]  %5d", statePatient(listPT, size, "isolated", 16, 30));
+
+	printf("%12d", statePatient(listPT, size, "released", 16, 30));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 16, 30));
+
+	printf("\n[31 - 45]  %5d", statePatient(listPT, size, "isolated", 31, 45));
+
+	printf("%12d", statePatient(listPT, size, "released", 31, 45));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 31, 45));
+
+	printf("\n[46 - 60]  %5d", statePatient(listPT, size, "isolated", 46, 60));
+
+	printf("%12d", statePatient(listPT, size, "released", 46, 60));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 46, 60));
+	
+	printf("\n[61 - 75]  %5d", statePatient(listPT, size, "isolated", 61, 75));
+
+	printf("%12d", statePatient(listPT, size, "released", 61, 75));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 61, 75));
+
+	printf("\n[76 - 130] %5d", statePatient(listPT, size, "isolated", 76, 130));
+
+	printf("%12d", statePatient(listPT, size, "released", 76, 130));
+
+	printf("%11d", statePatient(listPT, size, "deceased", 76, 130));
 
 	printf("\n");
-	//system("pause");
 
-	// Libertar memória
-	listDestroy(&auxList);
-	//mapDestroy(&mapDistrictAvg);
 }
 /*
 void Report(char *filename, PtList *listPT){

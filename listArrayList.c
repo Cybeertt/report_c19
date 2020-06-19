@@ -1,12 +1,3 @@
-/**
- * @file listArrayList.c
- * 
- * @brief Provides an implementation of the ADT List with an array list
- * as the underlying data structure.
- * 
- * @author Bruno Silva (brunomnsilva@gmail.com)
- * @bug No known bugs.
- */
 
 #include "list.h"
 #include <stdio.h>
