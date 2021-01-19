@@ -1,0 +1,18 @@
+
+Busan -> Mortality: 0.008671 | Incident Rate: 0.001214% | lethality: 2.400000% 
+Chungcheongbuk-do -> Mortality: 0.000000 | Incident Rate: 0.001341% | lethality: 0.000000% 
+Chungcheongnam-do -> Mortality: 0.000000 | Incident Rate: 0.001504% | lethality: 0.000000% 
+Daegu -> Mortality: 0.081030 | Incident Rate: 0.001580% | lethality: 24.096386% 
+Daejeon -> Mortality: 0.000000 | Incident Rate: 0.001205% | lethality: 0.000000% 
+Gangwon-do -> Mortality: 0.006408 | Incident Rate: 0.000833% | lethality: 2.631579% 
+Gwangju -> Mortality: 0.000000 | Incident Rate: 0.000811% | lethality: 0.000000% 
+Gyeonggi-do -> Mortality: 0.000732 | Incident Rate: 0.004028% | lethality: 0.166113% 
+Gyeongsangbuk-do -> Mortality: 0.128490 | Incident Rate: 0.020338% | lethality: 2.875925% 
+Gyeongsangnam-do -> Mortality: 0.000000 | Incident Rate: 0.001105% | lethality: 0.000000% 
+Incheon -> Mortality: 0.000000 | Incident Rate: 0.001750% | lethality: 0.000000% 
+Jeju-do -> Mortality: 0.000000 | Incident Rate: 0.000718% | lethality: 0.000000% 
+Jeollabuk-do -> Mortality: 0.000000 | Incident Rate: 0.000594% | lethality: 0.000000% 
+Jeollanam-do -> Mortality: 0.000000 | Incident Rate: 0.000630% | lethality: 0.000000% 
+Sejong -> Mortality: 0.000000 | Incident Rate: 0.008375% | lethality: 0.000000% 
+Seoul -> Mortality: 0.000000 | Incident Rate: 0.004925% | lethality: 0.000000% 
+Ulsan -> Mortality: 0.008558 | Incident Rate: 0.000856% | lethality: 2.439024% 

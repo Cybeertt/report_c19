@@ -1,34 +1,36 @@
 CFLAGS=-g -Wall
 CC=gcc
-objects= main.o list.o utils.o patient.o load.o sort.o date.o string.o info.o map.o
+objects= main.o mapArrayList.o mapElem.o listArrayList.o utils.o patient.o loadp.o loadr.o date.o commands.o listElem.o region.o stringCode.o
 prog: $(objects)
 	$(CC) $(CFLAGS) -o prog $^ -lm
 
-$(objects):
-
 test:
-	gcc -g -o prog main.c
+	$(CC) -g -o prog main.c 
 
 all:
-	gcc -g -o prog main.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c  sort.c info.c stringCode.c  region.c
+	$(CC) -g -o prog main.c commands.c date.c patient.c utils.c listElem.c listArrayList.c loadp.c loadr.c mapElem.c mapArrayList.c region.c utils.c stringCode.c
 
 clean:
-	rm -f prog
+	rm -f prog $(objects)
 
-list.o: list.h
+listArrayList.o: list.h
 
-map.o: map.h
+listElem.o: listElem.h
+
+mapArrayList.o: map.h
+
+mapElem.o: mapElem.h
 
 utils.o: utils.h
 
 patient.o: patient.h
 
-load.o: load.h
+loadr.o: loadr.h
 
-sort.o: sort.h
+loadp.o: loadp.h
 
 date.o: date.h
 
-string.o:cadeia_carateres.h
+commands.o: commands.h
 
-info.o: info.h
+stringCode.o: stringCode.h
